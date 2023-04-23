@@ -17,10 +17,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = current_user
     if @user.update(user_params)
       redirect_to user_path(current_user.id), notice: "You have updated user successfully."
     else
-      @user = current_user
       render "edit"
     end
   end
