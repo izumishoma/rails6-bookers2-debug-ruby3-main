@@ -3,6 +3,8 @@ class Book < ApplicationRecord
   has_many :book_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorited_users, through: :favorites, source: :user
+  
+  has_many :view_counts, dependent: :destroy
 
   def self.looks(search, word)
     if search == "perfect_match"

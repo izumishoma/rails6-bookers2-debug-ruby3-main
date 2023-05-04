@@ -17,6 +17,8 @@ class User < ApplicationRecord
   has_many :user_rooms, dependent: :destroy
   has_many :chats, dependent: :destroy
   
+  has_many :view_counts, dependent: :destroy
+  
   def follow(user_id)
     relationships.create(followed_id: user_id)
   end
