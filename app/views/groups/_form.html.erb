@@ -1,4 +1,4 @@
-<%= form_with model:group do |f| %>
+<%= form_with model:@group,local: true do |f| %>
   <div class="form-group">
     <%= f.label :グループ名 %>
     <%= f.text_field :name, class: "form-control name" %>
@@ -11,10 +11,10 @@
   
   <div class="form-group">
     <%= f.label :グループ画像 %>
-    <%= f.file_field :profile_image, class: "form-control-file user_image", accept: 'image/*' %>
+    <%= f.file_field :group_image, class: "form-control-file user_image", accept: 'image/*' %>
   </div>
   
   <div class="form-group">
-    <%= f.submit class: 'btn btn-success' %>
+    <%= f.submit class: 'btn btn-info' %>
   </div>
 <% end %>

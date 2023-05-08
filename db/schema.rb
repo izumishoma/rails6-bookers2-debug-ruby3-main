@@ -81,11 +81,11 @@ ActiveRecord::Schema.define(version: 2023_05_07_224407) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name"
     t.text "introduction"
+    t.integer "owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["name"], name: "index_groups_on_name", unique: true
   end
 
   create_table "relationships", force: :cascade do |t|
